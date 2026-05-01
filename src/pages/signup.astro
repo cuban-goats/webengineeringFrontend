@@ -3,72 +3,54 @@ import "../styles/signup.css";
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Sign Up</title>
-    </head>
-    <body>
-        <div class="login-wrapper">
-            <form id="signup-form">
-                <input
-                    id="email"
-                    type="email"
-                    placeholder="DHBW-Email"
-                    required
-                />
-                <input
-                    id="username"
-                    type="text"
-                    placeholder="Username"
-                    required
-                />
-                <input
-                    id="password"
-                    type="password"
-                    placeholder="Password"
-                    required
-                />
-                <button type="submit">→</button>
-                <a href="/login">Login</a>
-                <a href="/startPage" class="skip">Skip →</a>
-            </form>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <form id="signup-form">
+        <input id="email" type="email" placeholder="DHBW-Email" required />
+        <input id="username" type="text" placeholder="Username" required />
+        <input id="password" type="password" placeholder="Password" required />
+        <button type="submit">→</button>
+        <a href="/login">Login</a>
+        <a href="/startPage" class="skip">Skip →</a>
+      </form>
 
-            <script>
-                const form = document.getElementById(
-                    "signup-form",
-                ) as HTMLFormElement;
-                form.addEventListener("submit", async (e) => {
-                    e.preventDefault();
+      <script>
+        const form = document.getElementById("signup-form") as HTMLFormElement;
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-                    const email = (
-                        document.getElementById("email") as HTMLInputElement
-                    ).value;
-                    const username = (
-                        document.getElementById("username") as HTMLInputElement
-                    ).value;
-                    const password = (
-                        document.getElementById("password") as HTMLInputElement
-                    ).value;
+          const email = (document.getElementById("email") as HTMLInputElement)
+            .value;
+          const username = (
+            document.getElementById("username") as HTMLInputElement
+          ).value;
+          const password = (
+            document.getElementById("password") as HTMLInputElement
+          ).value;
 
-                    const response = await fetch(
-                        "http://localhost:5001/api/auth/register",
-                        {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ email, username, password }),
-                        },
-                    );
+          const response = await fetch(
+            "http://localhost:5001/api/auth/register",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, username, password }),
+            },
+          );
 
-                    if (response.ok) {
-                        window.location.href = "/login";
-                    } else {
-                        const msg = await response.text();
-                        alert(msg);
-                    }
-                });
-            </script>
-        </div>
-    </body>
+          if (response.ok) {
+            window.location.href = "/login";
+          } else {
+            const msg = await response.text();
+            alert(msg);
+          }
+        });
+      </script>
+    </div>
+  </body>
 </html>
