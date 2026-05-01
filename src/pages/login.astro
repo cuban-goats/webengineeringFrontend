@@ -3,21 +3,52 @@ import "../styles/login.css";
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>LoginPage</title>
-    </head>
-    <body>
-        <div class="login-wrapper">
-            <form action="">
-                <input type="email" placeholder="DHBW-Email or username" />
-                <input type="password" placeholder="Password" />
-                <button>→</button>
-                <a href="/signup">Sign up</a>
-                <a href="/startPage" class="skip">Skip →</a>
-            </form>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>LoginPage</title>
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <form action="">
+        <input type="email" placeholder="DHBW-Email or username" />
+        <input type="password" placeholder="Password" />
+        <button>→</button>
+        <a href="/signup">Sign up</a>
+        <a href="/startPage" class="skip">Skip →</a>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("signup-form") as HTMLFormElement;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const email = (document.getElementById("email") as HTMLInputElement)
+          .value;
+        const username = (
+          document.getElementById("username") as HTMLInputElement
+        ).value;
+        const password = (
+          document.getElementById("password") as HTMLInputElement
+        ).value;
+
+        const response = await fetch(
+          "http://localhost:5001/api/auth/register",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, username, password }),
+          },
+        );
+
+        if (response.ok) {
+          window.location.href = "/login";
+        } else {
+          const msg = await response.text();
+          alert(msg);
+        }
+      });
+    </script>
+  </body>
 </html>
