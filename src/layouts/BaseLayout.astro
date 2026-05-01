@@ -1,5 +1,6 @@
 ---
 import "../styles/baseLayout.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <!doctype html>
@@ -8,9 +9,15 @@ import "../styles/baseLayout.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ranq</title>
+    <script is:inline>
+      const t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    </script>
   </head>
   <body>
-    <header></header>
+    <header>
+      <ThemeToggle />
+    </header>
     <main>
       <div class="scroll-wrapper">
         <slot />

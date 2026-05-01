@@ -1,5 +1,6 @@
 ---
 import "../styles/login.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <html lang="en">
@@ -8,8 +9,13 @@ import "../styles/login.css";
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>LoginPage</title>
+        <script is:inline>
+            const t = localStorage.getItem('theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+        </script>
     </head>
     <body>
+        <ThemeToggle />
         <div class="login-wrapper">
             <form action="">
                 <input type="email" placeholder="DHBW-Email or username" />

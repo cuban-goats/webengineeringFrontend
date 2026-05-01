@@ -1,5 +1,6 @@
 ---
 import "../styles/signup.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <html lang="en">
@@ -8,8 +9,13 @@ import "../styles/signup.css";
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Sign Up</title>
+        <script is:inline>
+            const t = localStorage.getItem('theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+        </script>
     </head>
     <body>
+        <ThemeToggle />
         <div class="login-wrapper">
             <form id="signup-form">
                 <input

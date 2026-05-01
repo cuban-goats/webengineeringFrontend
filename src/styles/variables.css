@@ -1,0 +1,48 @@
+:root {
+    --color-bg: white;
+    --color-text: #1e1e1e;
+    --color-input-bg: #f0ebe0;
+    --color-input-text: #1e1e1e;
+    --color-link: #666;
+
+    --color-nav-bg: #1e1e1e;
+    --color-nav-icon: #f0ebe0;
+
+    --font: monospace;
+    --font-size-sm: 0.75rem;
+    --font-size-md: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.2rem;
+
+    --border-radius: 10rem;
+    --border-radius-card: 0.75rem;
+
+    --inset-shadow: none;
+    --inset-shadow-focus: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #1e1e1e;
+        --color-text: white;
+        --color-link: #aaa;
+        --inset-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.35);
+        --inset-shadow-focus: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+}
+
+[data-theme="light"] {
+    --color-bg: white;
+    --color-text: #1e1e1e;
+    --color-link: #666;
+    --inset-shadow: none;
+    --inset-shadow-focus: none;
+}
+
+[data-theme="dark"] {
+    --color-bg: #1e1e1e;
+    --color-text: white;
+    --color-link: #aaa;
+    --inset-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.35);
+    --inset-shadow-focus: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
