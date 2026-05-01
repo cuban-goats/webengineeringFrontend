@@ -1,0 +1,87 @@
+---
+const { post } = Astro.props;
+---
+
+<article class="post-card">
+  <div class="post-header">
+    <div class="avatar">{post.avatar}</div>
+    <div class="post-meta">
+      <span class="username">{post.username}</span>
+      <span class="timestamp">{post.timestamp}</span>
+    </div>
+  </div>
+  <p class="post-content">{post.content}</p>
+  <div class="post-footer">
+    <button class="action-btn">♡ {post.likes}</button>
+    <button class="action-btn">◻ {post.comments}</button>
+  </div>
+</article>
+
+<style>
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .username {
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  .timestamp {
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+
+  .post-content {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .post-footer {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    padding: 0;
+  }
+
+  .action-btn:hover {
+    opacity: 1;
+  }
+</style>
