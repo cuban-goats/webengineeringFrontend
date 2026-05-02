@@ -1,53 +1,14 @@
 ---
-import "../styles/login.css";
-import ThemeToggle from "../components/ThemeToggle.astro";
+import AuthLayout from "../layouts/AuthLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>LoginPage</title>
-    <script is:inline>
-      const t = localStorage.getItem('theme');
-      if (t) document.documentElement.setAttribute('data-theme', t);
-    </script>
-  </head>
-  <body>
-    <ThemeToggle />
-    <div class="login-wrapper">
-      <form id="login-form">
-        <input id="identifier" type="text" placeholder="Username" />
-        <input id="password" type="password" placeholder="Password" />
-        <button>→</button>
-        <a href="/signup">Sign up</a>
-        <a href="/start" class="skip">Skip →</a>
-      </form>
-    </div>
-    <script>
-      const form = document.getElementById("login-form") as HTMLFormElement;
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const identifier = (document.getElementById("identifier") as HTMLInputElement).value;
-        const password = (document.getElementById("password") as HTMLInputElement).value;
-
-        const response = await fetch("http://localhost:5001/api/auth/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username: identifier, password }),
-        });
-
-        if (response.ok) {
-          const userId = await response.text();
-          document.cookie = `userId=${userId}; path=/`;
-          window.location.href = "/";
-        } else {
-          const msg = await response.text();
-          alert(msg);
-        }
-      });
-    </script>
-  </body>
-</html>
+<AuthLayout title="Login">
+  <form id="login-form">
+    <input id="identifier" type="text" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+    <button>→</button>
+    <a href="/signup">Sign up</a>
+    <a href="/start" class="skip">Skip →</a>
+  </form>
+  <script src="../scripts/login.ts"></script>
+</AuthLayout>

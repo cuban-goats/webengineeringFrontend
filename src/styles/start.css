@@ -1,6 +1,13 @@
 .feed {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 5rem;
+}
+
+.feed-loading,
+.feed-error,
+.feed-empty {
+  opacity: 0.4;
+  font-size: var(--font-size-md);
 }

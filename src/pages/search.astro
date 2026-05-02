@@ -26,8 +26,7 @@ const mockPosts = [
     id: 3,
     username: "carol",
     avatar: "🦊",
-    content:
-      "Anyone else spending their weekend debugging CSS instead of touching grass?",
+    content: "Anyone else spending their weekend debugging CSS instead of touching grass?",
     likes: 108,
     comments: 33,
     timestamp: "1h ago",
@@ -45,8 +44,7 @@ const mockPosts = [
     id: 5,
     username: "eve.codes",
     avatar: "🐼",
-    content:
-      "New blog post: why I switched from React to Astro for all my side projects.",
+    content: "New blog post: why I switched from React to Astro for all my side projects.",
     likes: 45,
     comments: 19,
     timestamp: "5h ago",
@@ -83,41 +81,4 @@ const mockPosts = [
   </div>
 </BaseLayout>
 
-<script is:inline>
-  const input = document.getElementById("search-input");
-  const noResults = document.getElementById("no-results");
-  const postWrappers = document.querySelectorAll(".post-wrapper");
-
-  input.addEventListener("input", function () {
-    const query = input.value.toLowerCase();
-
-    if (query === "") {
-      for (let i = 0; i < postWrappers.length; i++) {
-        postWrappers[i].classList.add("hidden");
-      }
-      noResults.classList.add("hidden");
-      return;
-    }
-
-    let foundAny = false;
-
-    for (let i = 0; i < postWrappers.length; i++) {
-      const wrapper = postWrappers[i];
-      const username = wrapper.dataset.username.toLowerCase();
-      const content = wrapper.dataset.content.toLowerCase();
-
-      if (username.includes(query) || content.includes(query)) {
-        wrapper.classList.remove("hidden");
-        foundAny = true;
-      } else {
-        wrapper.classList.add("hidden");
-      }
-    }
-
-    if (foundAny) {
-      noResults.classList.add("hidden");
-    } else {
-      noResults.classList.remove("hidden");
-    }
-  });
-</script>
+<script src="../scripts/search.ts"></script>

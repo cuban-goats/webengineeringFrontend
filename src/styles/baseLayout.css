@@ -1,16 +1,7 @@
-@import './variables.css';
+@import './global.css';
 
 body {
   min-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-}
-
-* {
-  /* border: 1px solid red; */
-  font-family: var(--font);
 }
 
 main {
@@ -52,4 +43,3 @@ footer {
 .floating-nav a:hover {
   opacity: 0.7;
 }
-
