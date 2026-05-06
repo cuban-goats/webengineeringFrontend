@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/create.css";
+
+export const prerender = false;
+---
+
+<BaseLayout>
+  <div class="create-wrapper">
+    <h2 class="create-title">new poll</h2>
+    <form id="create-form">
+      <input id="question" type="text" placeholder="your question" required />
+      <ul id="options-list" class="options-list">
+        <li><input type="text" placeholder="option 1" required /></li>
+        <li><input type="text" placeholder="option 2" required /></li>
+      </ul>
+      <button type="button" id="add-option-btn" class="add-option-btn">+ add option</button>
+      <p id="create-error" class="create-error"></p>
+      <button type="submit">create</button>
+    </form>
+  </div>
+</BaseLayout>
+
+<script src="../scripts/create.ts"></script>

@@ -1,0 +1,48 @@
+.create-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+.create-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.options-list input {
+  width: 100%;
+}
+
+.add-option-btn {
+  background: none;
+  border: none;
+  color: var(--color-link);
+  font-size: var(--font-size-sm);
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.create-error {
+  font-size: var(--font-size-sm);
+  opacity: 0.6;
+  min-height: 1em;
+  margin: 0;
+}

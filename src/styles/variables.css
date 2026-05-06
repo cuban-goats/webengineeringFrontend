@@ -19,13 +19,21 @@
 
     --inset-shadow: none;
     --inset-shadow-focus: none;
+    --color-option-bg: rgba(0, 0, 0, 0.06);
+    --color-option-bar: rgba(0, 0, 0, 0.1);
+    --color-voted-bar: #7c9e7c;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --color-bg: #1e1e1e;
         --color-text: white;
+        --color-input-bg: #2a2a2a;
+        --color-input-text: white;
         --color-link: #aaa;
+        --color-option-bg: rgba(255, 255, 255, 0.06);
+        --color-option-bar: rgba(255, 255, 255, 0.12);
+        --color-voted-bar: #5a8a5a;
         --inset-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.35);
         --inset-shadow-focus: inset 0 2px 8px rgba(0, 0, 0, 0.5);
     }
@@ -34,7 +42,12 @@
 [data-theme="light"] {
     --color-bg: white;
     --color-text: #1e1e1e;
+    --color-input-bg: #f0ebe0;
+    --color-input-text: #1e1e1e;
     --color-link: #666;
+    --color-option-bg: rgba(0, 0, 0, 0.06);
+    --color-option-bar: rgba(0, 0, 0, 0.1);
+    --color-voted-bar: #7c9e7c;
     --inset-shadow: none;
     --inset-shadow-focus: none;
 }
@@ -42,7 +55,12 @@
 [data-theme="dark"] {
     --color-bg: #1e1e1e;
     --color-text: white;
+    --color-input-bg: #2a2a2a;
+    --color-input-text: white;
     --color-link: #aaa;
+    --color-option-bg: rgba(255, 255, 255, 0.06);
+    --color-option-bar: rgba(255, 255, 255, 0.12);
+    --color-voted-bar: #5a8a5a;
     --inset-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.35);
     --inset-shadow-focus: inset 0 2px 8px rgba(0, 0, 0, 0.5);
 }
