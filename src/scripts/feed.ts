@@ -49,7 +49,7 @@ async function loadFeed() {
         .join("");
 
       return `
-        <a class="poll-card" href="/poll/${poll.id}">
+        <a class="poll-card" href="/poll?id=${poll.id}">
           <p class="poll-question">${poll.question}</p>
           <ul class="poll-options">${options}</ul>
           <span class="poll-meta">${totalVotes} vote${totalVotes !== 1 ? "s" : ""}</span>
