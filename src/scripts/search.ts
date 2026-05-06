@@ -31,7 +31,7 @@ if (!response.ok) {
         }).join("");
         return `
         <div class="post-wrapper hidden" data-question="${post.question ?? ""}" data-created-by="${post.created_by ?? ""}">
-          <a class="poll-card" href="/poll/${post.id}">
+          <a class="poll-card" href="/poll?id=${post.id}">
             <p class="poll-question">${post.question}</p>
             <ul class="poll-options">${options}</ul>
             <span class="poll-meta">${totalVotes} vote${totalVotes !== 1 ? "s" : ""}</span>

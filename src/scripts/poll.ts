@@ -4,7 +4,7 @@ import { getCookie } from "../utils/cookies";
 const userId = getCookie("userId");
 if (!userId) window.location.replace("/login");
 
-const pollId = window.location.pathname.split("/").pop()!;
+const pollId = new URLSearchParams(window.location.search).get("id")!;
 
 type Option = { id: string; option: string; votes: number };
 type Poll = {

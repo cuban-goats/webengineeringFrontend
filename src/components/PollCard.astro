@@ -20,7 +20,7 @@ const { poll } = Astro.props;
 const totalVotes = poll.options.reduce((sum, o) => sum + o.votes, 0);
 ---
 
-<a class="poll-card" href={`/poll/${poll.id}`}>
+<a class="poll-card" href={`/poll?id=${poll.id}`}>
   <p class="poll-question">{poll.question}</p>
   <ul class="poll-options">
     {
