@@ -5,6 +5,17 @@ import "../styles/poll-card.css";
 ---
 
 <BaseLayout>
+  <div class="filters" style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+    <select id="filter-sort">
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+      <option value="popular">Most votes</option>
+    </select>
+    <label class="filter-voted">
+      <input id="filter-voted" type="checkbox" />
+      Voted
+    </label>
+  </div>
   <div id="feed" class="feed">
     <p class="feed-loading">loading...</p>
   </div>

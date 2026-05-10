@@ -3,10 +3,11 @@ import AuthLayout from "../layouts/AuthLayout.astro";
 ---
 
 <AuthLayout title="Login">
+  <div id="toast" class="toast" aria-live="polite"></div>
   <form id="login-form">
-    <input id="identifier" type="text" placeholder="Username" />
-    <input id="password" type="password" placeholder="Password" />
-    <button>→</button>
+    <input id="identifier" type="text" placeholder="Username" autocomplete="username" />
+    <input id="password" type="password" placeholder="Password" autocomplete="current-password" />
+    <button id="submit-btn">→</button>
     <a href="/signup">Sign up</a>
     <a href="/start" class="skip">Skip →</a>
   </form>

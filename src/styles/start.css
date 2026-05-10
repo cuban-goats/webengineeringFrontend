@@ -11,3 +11,34 @@
   opacity: 0.4;
   font-size: var(--font-size-md);
 }
+
+.filters {
+
+.filters select {
+  height: 2rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--color-input-bg);
+  color: var(--color-input-text);
+  font-family: var(--font);
+  font-size: var(--font-size-md);
+  padding: 0 0.75rem;
+  box-shadow: var(--inset-shadow);
+  cursor: pointer;
+}
+
+.filter-voted {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--font-size-md);
+  color: var(--color-link);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-voted input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
