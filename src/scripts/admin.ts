@@ -45,9 +45,8 @@ async function loadUnapprovedPolls() {
       const options = poll.options
         .map((opt) => {
           const pct = totalVotes > 0 ? Math.round((opt.votes / totalVotes) * 100) : 0;
-          const isVoted = opt.id === poll.voted_option_id;
           return `
-            <li class="poll-option">
+            <li class="poll-option" non-clickable>
               <span class="poll-option-label">${opt.option}</span>
               <span class="poll-option-pct">${pct}%</span>
             </li>`;
@@ -55,12 +54,24 @@ async function loadUnapprovedPolls() {
         .join("");
 
       return `
-        <a class="poll-card" href="/poll?id=${poll.id}" non-clickable>
+        <a class="poll-card" non-clickable>
           <p class="poll-question">${poll.question}</p>
           <ul class="poll-options">${options}</ul>
+          <button class="approve-btn" data-poll-id="${poll.id}">Approve</button>
         </a>`;
     })
     .join("");
+
+  feed.querySelectorAll<HTMLButtonElement>(".approve-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const pollId = btn.dataset.pollId!;
+      approve(pollId);
+    });
+  });
+}
+
+function approve(pollId: string) {
+  console.log("approve poll:", pollId);
 }
 
 loadUnapprovedPolls();
