@@ -1,6 +1,7 @@
 ---
 import "../styles/login.css";
 import ThemeToggle from "../components/ThemeToggle.astro";
+const apiBase = import.meta.env.PUBLIC_API_BASE_URL;
 ---
 
 <html lang="en">
@@ -25,15 +26,15 @@ import ThemeToggle from "../components/ThemeToggle.astro";
         <a href="/start" class="skip">Skip →</a>
       </form>
     </div>
-    <script>
-      const form = document.getElementById("login-form") as HTMLFormElement;
+    <script define:vars={{ apiBase }}>
+      const form = document.getElementById("login-form");
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const identifier = (document.getElementById("identifier") as HTMLInputElement).value;
-        const password = (document.getElementById("password") as HTMLInputElement).value;
+        const identifier = document.getElementById("identifier").value;
+        const password = document.getElementById("password").value;
 
-        const response = await fetch("http://localhost:5001/api/auth/login", {
+        const response = await fetch(`${apiBase}/api/auth/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username: identifier, password }),

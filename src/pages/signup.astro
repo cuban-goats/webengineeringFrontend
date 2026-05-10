@@ -1,6 +1,7 @@
 ---
 import "../styles/signup.css";
 import ThemeToggle from "../components/ThemeToggle.astro";
+const apiBase = import.meta.env.PUBLIC_API_BASE_URL;
 ---
 
 <html lang="en">
@@ -26,17 +27,17 @@ import ThemeToggle from "../components/ThemeToggle.astro";
         <a href="/start" class="skip">Skip →</a>
       </form>
 
-      <script>
-        const form = document.getElementById("signup-form") as HTMLFormElement;
+      <script define:vars={{ apiBase }}>
+        const form = document.getElementById("signup-form");
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
 
-          const email = (document.getElementById("email") as HTMLInputElement).value;
-          const username = (document.getElementById("username") as HTMLInputElement).value;
-          const password = (document.getElementById("password") as HTMLInputElement).value;
+          const email = document.getElementById("email").value;
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
 
           const response = await fetch(
-            "http://localhost:5001/api/auth/register",
+            `${apiBase}/api/auth/register`,
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
