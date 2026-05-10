@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/start.css";
+import "../styles/admin.css";
+import "../styles/poll-card.css";
+---
+
+<BaseLayout>
+  <div class="adminWrapper">
+    <div class="admin-box">
+      <h2 class="admin-box-title">Users</h2>
+      <div class="admin-box-buttons">
+        <button class="admin-btn">View All Users</button>
+        <button class="admin-btn">Search User</button>
+        <button class="admin-btn admin-btn-danger">Ban User</button>
+      </div>
+    </div>
+    <div class="admin-box">
+      <h2 class="admin-box-title">Polls for Approval</h2>
+      <div id="admin-box-polls" class="feed">
+        <p class="feed-loading">loading...</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script src="../scripts/admin.ts"></script>

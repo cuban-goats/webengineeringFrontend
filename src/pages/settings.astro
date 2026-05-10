@@ -1,0 +1,35 @@
+
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/start.css";
+import "../styles/settings.css";
+---
+
+<BaseLayout>
+  <div class="settingsWrapper">
+    <div class="settings-box">
+      <h2 class="settings-box-title">Other Settings</h2>
+      <div class="settings-box-buttons">
+        <button class="settings-btn">...</button>
+        <button class="settings-btn">...</button>
+        <button class="settings-btn settings-btn-danger">...</button>
+      </div>
+    </div>
+    <div class="settings-box">
+      <h2 class="settings-box-title">Account Information</h2>
+      <div class="settings-box-buttons">
+        <button class="settings-btn">...</button>
+      </div>
+    </div>
+    <div class="settings-box">
+      <h2 class="settings-box-title">Account</h2>
+      <div class="settings-box-buttons">
+        <button class="settings-btn">Edit Profile</button>
+        <button class="settings-btn">Change Password</button>
+        <button class="settings-btn settings-btn-danger">Delete Account</button>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script src="../scripts/settings.ts"></script>

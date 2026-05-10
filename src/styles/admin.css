@@ -1,0 +1,51 @@
+.adminWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 5rem;
+}
+
+.admin-box {
+  background-color: var(--color-option-bg);
+  border-radius: var(--border-radius-card);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-box-title {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.admin-box-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-btn {
+  height: 1.75rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--color-option-bg);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  padding: 0 0.75rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.admin-btn:hover {
+  opacity: 0.7;
+}
+
+.admin-btn-danger {
+  color: #c0392b;
+}
+.admin-box-polls {
+
+}

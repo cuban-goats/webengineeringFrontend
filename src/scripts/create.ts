@@ -11,7 +11,6 @@ const errorMsg = document.getElementById("create-error") as HTMLParagraphElement
 
 addBtn.addEventListener("click", () => {
   const count = optionsList.children.length;
-  if (count >= 6) return;
 
   const li = document.createElement("li");
   const input = document.createElement("input");
@@ -20,8 +19,6 @@ addBtn.addEventListener("click", () => {
   input.required = true;
   li.append(input);
   optionsList.append(li);
-
-  if (count + 1 >= 6) addBtn.style.display = "none";
 });
 
 form.addEventListener("submit", async (e) => {
