@@ -5,6 +5,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -20,13 +21,12 @@
   background-color: var(--color-input-bg);
   color: var(--color-input-text);
   box-shadow: var(--inset-shadow);
-  animation: cardIn 0.3s ease both;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: cardIn 0.3s ease backwards;
+  transition: transform 0.2s ease;
 }
 
 .post-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--card-hover-shadow);
+  transform: scale(1.03);
 }
 
 .post-meta {
