@@ -49,3 +49,19 @@
 .admin-box-polls {
 
 }
+
+.approve-btn {
+  font-size: var(--font-size-sm);
+  padding: 0.2rem 0.6rem;
+  width: fit-content;
+  align-self: center;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--color-option-bg);
+  color: #27ae60;
+  cursor: pointer;
+}
+
+.approve-btn:hover {
+  opacity: 0.7;
+}
