@@ -44,9 +44,11 @@ form button {
     height: 2rem;
     width: 20rem;
     border: none;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-size: var(--font-size-base);
+    border-radius: var(--btn-radius);
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    font-family: var(--font);
+    font-size: var(--btn-font-size);
     cursor: pointer;
 }
 

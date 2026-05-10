@@ -1,138 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PostCard from "../components/PostCard.astro";
+import "../styles/PostCard.css";
 import "../styles/start.css";
-
-const mockPosts = [
-    {
-        id: 1,
-        username: "alice",
-        avatar: "🐱",
-        content:
-            "Just finished my first Astro project — loving how fast it is!",
-        likes: 24,
-        comments: 5,
-        timestamp: "2m ago",
-    },
-    {
-        id: 2,
-        username: "bob_dev",
-        avatar: "🐶",
-        content: "Hot take: monospace fonts make every UI look 10x better.",
-        likes: 61,
-        comments: 12,
-        timestamp: "14m ago",
-    },
-    {
-        id: 3,
-        username: "carol",
-        avatar: "🦊",
-        content:
-            "Anyone else spending their weekend debugging CSS instead of touching grass?",
-        likes: 108,
-        comments: 33,
-        timestamp: "1h ago",
-    },
-    {
-        id: 4,
-        username: "dan42",
-        avatar: "🐻",
-        content: "Reminder that done is better than perfect. Ship the thing.",
-        likes: 77,
-        comments: 8,
-        timestamp: "3h ago",
-    },
-    {
-        id: 5,
-        username: "eve.codes",
-        avatar: "🐼",
-        content:
-            "New blog post: why I switched from React to Astro for all my side projects.",
-        likes: 45,
-        comments: 19,
-        timestamp: "5h ago",
-    },
-    {
-        id: 6,
-        username: "felix_ui",
-        avatar: "🦁",
-        content:
-            "CSS tip: use gap instead of margin for spacing inside flex containers. Thank me later.",
-        likes: 93,
-        comments: 21,
-        timestamp: "6h ago",
-    },
-    {
-        id: 7,
-        username: "greta.dev",
-        avatar: "🐰",
-        content:
-            "Just deployed my first full stack app. It only took 4 months, 3 rewrites and 1 existential crisis.",
-        likes: 204,
-        comments: 47,
-        timestamp: "8h ago",
-    },
-    {
-        id: 8,
-        username: "hans99",
-        avatar: "🐯",
-        content: "Does anyone actually read documentation or is it just me?",
-        likes: 38,
-        comments: 14,
-        timestamp: "10h ago",
-    },
-    {
-        id: 9,
-        username: "ines_codes",
-        avatar: "🦋",
-        content: "Variable names matter. Future you will thank present you.",
-        likes: 117,
-        comments: 9,
-        timestamp: "12h ago",
-    },
-    {
-        id: 10,
-        username: "jonas.m",
-        avatar: "🐸",
-        content:
-            "Started learning TypeScript today. It's just JavaScript with trust issues.",
-        likes: 156,
-        comments: 38,
-        timestamp: "14h ago",
-    },
-    {
-        id: 11,
-        username: "katja_w",
-        avatar: "🦜",
-        content:
-            "Spent 3 hours on a bug. It was a missing semicolon. I am fine.",
-        likes: 312,
-        comments: 64,
-        timestamp: "16h ago",
-    },
-    {
-        id: 12,
-        username: "luca.dev",
-        avatar: "🐺",
-        content: "Reminder: comments in code should explain WHY, not WHAT.",
-        likes: 88,
-        comments: 11,
-        timestamp: "18h ago",
-    },
-];
 ---
 
 <BaseLayout>
-    <div class="feed">
-        {mockPosts.map((post) => <PostCard post={post} />)}
-    </div>
+  <div class="page-header">
+    <h1 class="page-title">Feed</h1>
+  </div>
+  <div id="feed" class="feed">
+    <p id="empty-msg" class="empty-msg hidden">
+      Noch keine Umfragen. Drück + um die erste zu erstellen!
+    </p>
+  </div>
 </BaseLayout>
 
-<style>
-    .feed {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding-bottom: 5rem;
-    }
-</style>
+<script src="../scripts/start.ts"></script>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/create.css";
+---
+
+<BaseLayout>
+  <div class="page-header">
+    <h1 class="page-title">Neue Umfrage</h1>
+  </div>
+  <form id="create-form" class="create-form">
+      <label for="question">Frage</label>
+      <textarea
+        id="question"
+        name="question"
+        placeholder="Was möchtest du fragen?"
+        rows="3"
+        required
+      ></textarea>
+
+      <label>Optionen</label>
+      <div id="answers-container" class="answers-container">
+        <div class="answer-row">
+          <input type="text" class="answer-input" placeholder="Option 1" required />
+        </div>
+        <div class="answer-row">
+          <input type="text" class="answer-input" placeholder="Option 2" required />
+        </div>
+      </div>
+
+      <button type="button" id="add-answer" class="add-answer-btn">+ Option hinzufügen</button>
+      <button type="submit" class="submit-btn">Erstellen →</button>
+    </form>
+</BaseLayout>
+
+<script src="../scripts/create.ts"></script>
