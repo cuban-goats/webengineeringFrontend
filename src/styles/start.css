@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 0;
   padding-bottom: 5rem;
-  border-top: 1px solid var(--color-divider);
 }
 
 .feed-loading,
@@ -11,34 +10,33 @@
 .feed-empty {
   opacity: 0.4;
   font-size: var(--font-size-md);
+  font-style: italic;
 }
 
 .filters {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
 .filters select {
   height: 2rem;
   border: none;
-  border-radius: var(--border-radius);
-  background-color: var(--color-input-bg);
-  color: var(--color-input-text);
+  border-bottom: 1px solid var(--color-text);
+  background-color: transparent;
+  color: var(--color-text);
   font-family: var(--font);
   font-size: var(--font-size-md);
-  padding: 0 0.75rem;
-  box-shadow: var(--inset-shadow);
+  padding: 0;
   cursor: pointer;
 }
 
 .filter-toggle {
   height: 2rem;
-  border: none;
-  border-radius: var(--border-radius);
-  background: var(--color-option-bg);
-  color: var(--color-link);
+  border: 1px solid var(--color-text);
+  background: transparent;
+  color: var(--color-text);
   font-family: var(--font);
   font-size: var(--font-size-md);
   padding: 0 0.75rem;
