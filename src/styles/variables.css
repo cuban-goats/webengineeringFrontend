@@ -9,10 +9,10 @@
     --color-nav-icon: #f0ebe0;
 
     --font: monospace;
-    --font-size-sm: 0.75rem;
-    --font-size-md: 0.9rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.2rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.4rem;
 
     --border-radius: 0;
     --border-radius-card: 0;
