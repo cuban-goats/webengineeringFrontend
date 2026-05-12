@@ -1,97 +1,58 @@
 :root {
-    --color-bg: #ffffff;
-    --color-text: #1e1e1e;
+    --color-bg: #008080;
+    --color-text: #000000;
     --color-input-bg: #ffffff;
-    --color-input-text: #1e1e1e;
-    --color-link: #e2b714;
-    --color-accent: #e2b714;
+    --color-input-text: #000000;
+    --color-link: #000080;
+    --color-accent: #000080;
 
-    --color-nav-bg: #e2b714;
-    --color-nav-icon: #1e1e1e;
+    --color-nav-bg: #c0c0c0;
+    --color-nav-icon: #000000;
 
-    --font: monospace;
-    --font-size-sm: 1rem;
-    --font-size-md: 1.2rem;
-    --font-size-base: 1.4rem;
-    --font-size-lg: 1.8rem;
+    --font: 'MS Sans Serif', 'Segoe UI', Tahoma, Arial, sans-serif;
+    --font-size-sm: 0.72rem;
+    --font-size-md: 0.8rem;
+    --font-size-base: 0.82rem;
+    --font-size-lg: 0.82rem;
 
     --border-radius: 0;
     --border-radius-card: 0;
 
-    --inset-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-    --inset-shadow-focus: 0 2px 10px rgba(0, 0, 0, 0.13);
-    --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    /* Win95 bevel */
+    --win-raised: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+    --win-sunken: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
 
-    /* --- Buttons --- */
-    --btn-bg: var(--color-accent);
-    --btn-color: #1e1e1e;
-    --btn-radius: var(--border-radius);
-    --btn-padding: 0.65rem 1.5rem;
+    --inset-shadow: var(--win-sunken);
+    --inset-shadow-focus: var(--win-sunken);
+    --card-hover-shadow: var(--win-raised);
+
+    /* Buttons */
+    --btn-bg: #c0c0c0;
+    --btn-color: #000000;
+    --btn-radius: 0;
+    --btn-padding: 0.3rem 1.2rem;
     --btn-font-size: var(--font-size-base);
 
-    --btn-ghost-color: var(--color-accent);
-    --btn-ghost-font-size: var(--font-size-sm);
+    --btn-ghost-color: #000080;
+    --btn-ghost-font-size: var(--font-size-base);
 
-    --btn-option-bg: rgba(0, 0, 0, 0.06);
-    --btn-vote-bar: rgba(226, 183, 20, 0.25);
-    --btn-option-color: var(--color-input-text);
-    --btn-option-radius: var(--border-radius-card);
-    --btn-option-padding: 0.5rem 0.75rem;
-    --btn-option-font-size: var(--font-size-md);
+    --btn-option-bg: #c0c0c0;
+    --btn-vote-bar: rgba(0, 0, 128, 0.35);
+    --btn-option-color: #000000;
+    --btn-option-radius: 0;
+    --btn-option-padding: 0.25rem 0.5rem;
+    --btn-option-font-size: var(--font-size-base);
 
-    /* aliases for poll-card, settings, admin */
-    --color-option-bg: var(--btn-option-bg);
-    --color-option-bar: var(--btn-vote-bar);
-    --color-voted-bar: #e2b714;
+    /* aliases */
+    --color-option-bg: #c0c0c0;
+    --color-option-bar: rgba(0, 0, 128, 0.35);
+    --color-voted-bar: rgba(0, 0, 128, 0.55);
+    --color-divider: #808080;
 
-    --color-divider: rgba(0, 0, 0, 0.12);
+    /* Win95 extras */
+    --win-window-bg: #c0c0c0;
+    --win-title-bg: linear-gradient(to right, #000080, #1084d0);
+    --win-title-text: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-bg: #1e1e1e;
-        --color-text: white;
-        --color-input-bg: #2a2a2a;
-        --color-input-text: white;
-        --color-link: #e2b714;
-        --color-accent: #e2b714;
-        --inset-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-        --inset-shadow-focus: 0 2px 12px rgba(0, 0, 0, 0.5);
-        --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-        --btn-option-bg: rgba(255, 255, 255, 0.07);
-        --btn-vote-bar: rgba(226, 183, 20, 0.2);
-        --color-voted-bar: #e2b714;
-        --color-divider: rgba(255, 255, 255, 0.1);
-    }
-}
-
-[data-theme="light"] {
-    --color-bg: #ffffff;
-    --color-text: #1e1e1e;
-    --color-input-bg: #ffffff;
-    --color-input-text: #1e1e1e;
-    --color-link: #e2b714;
-    --color-accent: #e2b714;
-    --inset-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-    --inset-shadow-focus: 0 2px 10px rgba(0, 0, 0, 0.13);
-    --btn-option-bg: rgba(0, 0, 0, 0.06);
-    --btn-vote-bar: rgba(226, 183, 20, 0.15);
-    --color-voted-bar: #e2b714;
-    --color-divider: rgba(0, 0, 0, 0.12);
-}
-
-[data-theme="dark"] {
-    --color-bg: #1e1e1e;
-    --color-text: white;
-    --color-input-bg: #2a2a2a;
-    --color-input-text: white;
-    --color-link: #e2b714;
-    --color-accent: #e2b714;
-    --inset-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    --inset-shadow-focus: 0 2px 12px rgba(0, 0, 0, 0.5);
-    --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    --btn-option-bg: rgba(255, 255, 255, 0.07);
-    --btn-vote-bar: rgba(226, 183, 20, 0.2);
-    --color-voted-bar: #e2b714;
-    --color-divider: rgba(255, 255, 255, 0.1);
-}
+/* Win95 has no dark mode — use same palette always */

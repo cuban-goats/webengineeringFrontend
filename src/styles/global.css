@@ -25,10 +25,15 @@ input {
   font-size: var(--font-size-base);
   background-color: var(--color-input-bg);
   color: var(--color-input-text);
-  border-radius: var(--border-radius);
-  padding: 0 0.75rem;
-  height: 2rem;
-  box-shadow: var(--inset-shadow);
+  border-radius: 0;
+  padding: 0 0.4rem;
+  height: 1.5rem;
+  box-shadow: var(--win-sunken);
+}
+
+input:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -3px;
 }
 
 button {

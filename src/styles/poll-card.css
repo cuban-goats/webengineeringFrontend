@@ -1,9 +1,8 @@
 @keyframes cardIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(6px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -11,47 +10,56 @@
 }
 
 .poll-card {
+  background: #c0c0c0;
+  box-shadow: var(--win-raised);
+  border: none;
+  margin-bottom: 8px;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.1rem 0;
-  color: var(--color-text);
-  text-decoration: none;
+  transition: none;
   cursor: pointer;
-  animation: cardIn 0.3s ease backwards;
-  border-bottom: 1px solid var(--color-divider);
-  transition: opacity 0.15s ease;
-}
-
-.poll-card:hover {
-  opacity: 0.7;
+  animation: cardIn 0.2s ease backwards;
 }
 
 .poll-question {
-  margin: 0;
-  font-size: 1.15rem;
+  background: var(--win-title-bg);
+  color: #ffffff;
+  padding: 0.22rem 0.4rem;
+  font-size: 0.8rem;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
   line-height: 1.4;
+}
+
+.poll-question::after {
+  content: '─  □  ✕';
+  font-size: 0.62rem;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 .poll-options {
   list-style: none;
-  margin: 0;
+  margin: 0.4rem;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 2px;
 }
 
 .poll-option {
   position: relative;
   display: flex;
   align-items: center;
-  height: 1.75rem;
-  border-radius: var(--border-radius);
+  height: 1.5rem;
   overflow: hidden;
-  background: var(--color-option-bg);
-  padding: 0 0.75rem;
+  background: #c0c0c0;
+  box-shadow: var(--win-sunken);
+  padding: 0 0.4rem;
 }
 
 .poll-option-bar {
@@ -60,25 +68,25 @@
   top: 0;
   height: 100%;
   background: var(--color-option-bar);
-  border-radius: var(--border-radius);
   transition: width 0.6s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .poll-option-label {
   position: relative;
   flex: 1;
-  font-size: var(--font-size-md);
+  font-size: 0.78rem;
 }
 
 .poll-option-pct {
   position: relative;
-  font-size: var(--font-size-sm);
-  opacity: 0.5;
+  font-size: 0.7rem;
+  opacity: 0.7;
 }
 
 .poll-meta {
-  font-size: var(--font-size-sm);
-  opacity: 0.4;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  padding: 0.2rem 0.4rem;
 }
 
 .poll-option--voted .poll-option-bar {

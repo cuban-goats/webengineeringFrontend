@@ -1,14 +1,14 @@
 .create-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding-bottom: 5rem;
+  gap: 1rem;
+  padding: 0 6px 5rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .options-list {
@@ -17,7 +17,7 @@ form {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 4px;
 }
 
 .options-list input {
@@ -27,11 +27,12 @@ form {
 .add-option-btn {
   background: none;
   border: none;
-  color: var(--btn-ghost-color);
-  font-size: var(--btn-ghost-font-size);
+  color: var(--color-link);
+  font-size: var(--font-size-base);
   padding: 0;
   text-align: left;
   cursor: pointer;
+  font-family: var(--font);
 }
 
 .add-option-btn:hover {
@@ -39,20 +40,26 @@ form {
 }
 
 form button[type="submit"] {
-  background: var(--btn-bg);
-  color: var(--btn-color);
+  background: #c0c0c0;
+  color: #000000;
   border: none;
-  border-radius: var(--btn-radius);
-  padding: var(--btn-padding);
+  box-shadow: var(--win-raised);
+  padding: 0.3rem 1.2rem;
   font-family: var(--font);
-  font-size: var(--btn-font-size);
+  font-size: var(--font-size-base);
   cursor: pointer;
   margin-top: 0.5rem;
   width: 100%;
+  height: 1.75rem;
 }
 
 form button[type="submit"]:hover {
-  opacity: 0.8;
+  opacity: 1;
+}
+
+form button[type="submit"]:active {
+  box-shadow: var(--win-sunken);
+  padding-top: calc(0.3rem + 1px);
 }
 
 .create-error {
