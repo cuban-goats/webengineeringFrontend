@@ -83,7 +83,27 @@ function applyFilters() {
     return;
   }
 
-  feed.innerHTML = polls.map(renderPoll).join("");
+  feed.innerHTML = '';
+
+  polls.forEach((poll, i) => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = renderPoll(poll);
+    const card = tmp.firstElementChild as HTMLElement;
+
+    card.style.animationDelay = `${i * 0.06}s`;
+
+    const bars = card.querySelectorAll<HTMLElement>('.poll-option-bar');
+    const targets = Array.from(bars).map((b) => b.style.width);
+    bars.forEach((b) => (b.style.width = '0'));
+
+    feed.appendChild(card);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        bars.forEach((b, j) => (b.style.width = targets[j]));
+      });
+    });
+  });
 }
 
 async function loadFeed() {

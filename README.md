@@ -37,3 +37,4 @@ npm run preview  # preview production build locally
 - Email verification on registration
 - Dark / light theme toggle
 - Admin panel for poll approval
+...
