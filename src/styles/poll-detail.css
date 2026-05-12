@@ -53,6 +53,10 @@
   transition: opacity 0.15s ease;
 }
 
+.poll-card--detail:hover {
+  transform: none;
+}
+
 .poll-vote-option:hover {
   opacity: 0.75;
 }
