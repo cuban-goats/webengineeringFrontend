@@ -1,13 +1,13 @@
 :root {
-    --color-bg: #f0ebe0;
+    --color-bg: #ffffff;
     --color-text: #1e1e1e;
     --color-input-bg: #ffffff;
     --color-input-text: #1e1e1e;
-    --color-link: #7c3aed;
-    --color-accent: #7c3aed;
+    --color-link: #e2b714;
+    --color-accent: #e2b714;
 
-    --color-nav-bg: #7c3aed;
-    --color-nav-icon: #ffffff;
+    --color-nav-bg: #e2b714;
+    --color-nav-icon: #1e1e1e;
 
     --font: monospace;
     --font-size-sm: 1rem;
@@ -24,7 +24,7 @@
 
     /* --- Buttons --- */
     --btn-bg: var(--color-accent);
-    --btn-color: #ffffff;
+    --btn-color: #1e1e1e;
     --btn-radius: var(--border-radius);
     --btn-padding: 0.65rem 1.5rem;
     --btn-font-size: var(--font-size-base);
@@ -32,8 +32,8 @@
     --btn-ghost-color: var(--color-accent);
     --btn-ghost-font-size: var(--font-size-sm);
 
-    --btn-option-bg: rgba(240, 235, 224, 0.7);
-    --btn-vote-bar: rgba(124, 58, 237, 0.15);
+    --btn-option-bg: rgba(0, 0, 0, 0.06);
+    --btn-vote-bar: rgba(226, 183, 20, 0.25);
     --btn-option-color: var(--color-input-text);
     --btn-option-radius: var(--border-radius-card);
     --btn-option-padding: 0.5rem 0.75rem;
@@ -42,7 +42,9 @@
     /* aliases for poll-card, settings, admin */
     --color-option-bg: var(--btn-option-bg);
     --color-option-bar: var(--btn-vote-bar);
-    --color-voted-bar: #7c3aed;
+    --color-voted-bar: #e2b714;
+
+    --color-divider: rgba(0, 0, 0, 0.12);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,29 +53,31 @@
         --color-text: white;
         --color-input-bg: #2a2a2a;
         --color-input-text: white;
-        --color-link: #a78bfa;
-        --color-accent: #7c3aed;
+        --color-link: #e2b714;
+        --color-accent: #e2b714;
         --inset-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
         --inset-shadow-focus: 0 2px 12px rgba(0, 0, 0, 0.5);
         --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
         --btn-option-bg: rgba(255, 255, 255, 0.07);
-        --btn-vote-bar: rgba(167, 139, 250, 0.2);
-        --color-voted-bar: #a78bfa;
+        --btn-vote-bar: rgba(226, 183, 20, 0.2);
+        --color-voted-bar: #e2b714;
+        --color-divider: rgba(255, 255, 255, 0.1);
     }
 }
 
 [data-theme="light"] {
-    --color-bg: #f0ebe0;
+    --color-bg: #ffffff;
     --color-text: #1e1e1e;
     --color-input-bg: #ffffff;
     --color-input-text: #1e1e1e;
-    --color-link: #7c3aed;
-    --color-accent: #7c3aed;
+    --color-link: #e2b714;
+    --color-accent: #e2b714;
     --inset-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
     --inset-shadow-focus: 0 2px 10px rgba(0, 0, 0, 0.13);
-    --btn-option-bg: rgba(240, 235, 224, 0.7);
-    --btn-vote-bar: rgba(124, 58, 237, 0.15);
-    --color-voted-bar: #7c3aed;
+    --btn-option-bg: rgba(0, 0, 0, 0.06);
+    --btn-vote-bar: rgba(226, 183, 20, 0.15);
+    --color-voted-bar: #e2b714;
+    --color-divider: rgba(0, 0, 0, 0.12);
 }
 
 [data-theme="dark"] {
@@ -81,12 +85,13 @@
     --color-text: white;
     --color-input-bg: #2a2a2a;
     --color-input-text: white;
-    --color-link: #a78bfa;
-    --color-accent: #7c3aed;
+    --color-link: #e2b714;
+    --color-accent: #e2b714;
     --inset-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     --inset-shadow-focus: 0 2px 12px rgba(0, 0, 0, 0.5);
     --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
     --btn-option-bg: rgba(255, 255, 255, 0.07);
-    --btn-vote-bar: rgba(167, 139, 250, 0.2);
-    --color-voted-bar: #a78bfa;
+    --btn-vote-bar: rgba(226, 183, 20, 0.2);
+    --color-voted-bar: #e2b714;
+    --color-divider: rgba(255, 255, 255, 0.1);
 }
