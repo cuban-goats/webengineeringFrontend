@@ -48,13 +48,14 @@
     :root {
         --color-bg: #1e1e1e;
         --color-text: white;
-        --color-input-bg: #f0ebe0;
+        --color-input-bg: #2a2a2a;
+        --color-input-text: white;
         --color-link: #aaa;
-        --inset-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.35);
-        --inset-shadow-focus: inset 0 2px 8px rgba(0, 0, 0, 0.5);
-        --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-        --btn-option-bg: rgba(0, 0, 0, 0.1);
-        --btn-vote-bar: rgba(0, 0, 0, 0.22);
+        --inset-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        --inset-shadow-focus: 0 2px 12px rgba(0, 0, 0, 0.5);
+        --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        --btn-option-bg: rgba(255, 255, 255, 0.07);
+        --btn-vote-bar: rgba(255, 255, 255, 0.12);
         --color-voted-bar: #5a8a5a;
     }
 }
@@ -63,6 +64,7 @@
     --color-bg: #f0ebe0;
     --color-text: #1e1e1e;
     --color-input-bg: #ffffff;
+    --color-input-text: #1e1e1e;
     --color-link: #666;
     --inset-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
     --inset-shadow-focus: 0 2px 10px rgba(0, 0, 0, 0.13);
@@ -74,12 +76,13 @@
 [data-theme="dark"] {
     --color-bg: #1e1e1e;
     --color-text: white;
-    --color-input-bg: #f0ebe0;
+    --color-input-bg: #2a2a2a;
+    --color-input-text: white;
     --color-link: #aaa;
-    --inset-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.35);
-    --inset-shadow-focus: inset 0 2px 8px rgba(0, 0, 0, 0.5);
-    --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-    --btn-option-bg: rgba(0, 0, 0, 0.1);
-    --btn-vote-bar: rgba(0, 0, 0, 0.22);
+    --inset-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --inset-shadow-focus: 0 2px 12px rgba(0, 0, 0, 0.5);
+    --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    --btn-option-bg: rgba(255, 255, 255, 0.07);
+    --btn-vote-bar: rgba(255, 255, 255, 0.12);
     --color-voted-bar: #5a8a5a;
 }
